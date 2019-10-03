@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 import rawpy
 import imageio
 import glob
@@ -8,7 +6,7 @@ import sys
 
 files = glob.glob(sys.argv[1]+'*.ARW')
 num_photos = len(files)
-print ('nr ARW founded -->' + str(num_photos))
+print ('nr ARW founded --> ' + str(num_photos))
 
 if num_photos > 0:
 
@@ -16,7 +14,7 @@ if num_photos > 0:
         os.makedirs(sys.argv[1] + 'converted/')
 
     for f in files:
-        print ('Processing -->' + f)
+        print ('Processing --> ' + f)
         with rawpy.imread(f) as raw:
             rgb = raw.postprocess()
         fileName = os.path.splitext(f)[0] + '.jpg'
