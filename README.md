@@ -1,7 +1,12 @@
 # arw2jpg
 convert by terminal arw to jpg 
 
-### how to use:
+### Usage:
 ```
-$ python3 arw2jpg.py /photos
+$ usage: arw2jpg [-h] [-n NUMB_CORES] [-d] folder_name
+```
+
+### Install:
+```
+$ python setup.py install
 ```
