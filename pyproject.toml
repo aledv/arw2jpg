@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arw2jpg"
+version = "2.0.0"
+description = "Command-line tool to convert camera RAW files (Sony .ARW by default) to JPEG, in parallel"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "aledv" }, { name = "devincody" }]
+requires-python = ">=3.10"
+dependencies = ["rawpy>=0.19", "imageio>=2.28"]
+
+[project.scripts]
+arw2jpg = "arw2jpg.arw2jpg:main"
+
+[project.urls]
+Homepage = "https://github.com/aledv/arw2jpg"
+
+[tool.setuptools]
+packages = ["arw2jpg"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
