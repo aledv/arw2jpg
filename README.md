@@ -1,8 +1,17 @@
 # arw2jpg
 
+[![CI](https://github.com/aledv/arw2jpg/actions/workflows/ci.yml/badge.svg)](https://github.com/aledv/arw2jpg/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Command-line tool to convert a folder of camera RAW files (Sony `.ARW` by default) to JPEG, using all your CPU
 cores. RAW files are developed with [rawpy](https://github.com/letmaik/rawpy) (LibRaw) using the camera white
 balance, and saved with [imageio](https://imageio.readthedocs.io/).
+
+## Features
+
+- Converts a whole folder in parallel (all cores but one by default).
+- Camera white balance, JPEG quality of your choice, existing JPEGs skipped unless `--overwrite`.
+- Any RAW format LibRaw supports (`.ARW`, `.NEF`, `.CR2`/`.CR3`, `.RAF`, `.DNG`...), case-insensitive.
+- Pure Python package with a `arw2jpg` command; no GUI, works over SSH.
 
 ## Install
 
@@ -45,6 +54,10 @@ ruff check . && ruff format --check .      # linter
 ```
 
 CI (GitHub Actions) runs the linter and the tests on Python 3.10, 3.12 and 3.13.
+
+## Contributing
+
+Issues and pull requests are welcome. Please run the linters and tests (see [Development](#development)) before opening a pull request.
 
 ## License
 
